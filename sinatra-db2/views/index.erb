@@ -1,0 +1,33 @@
+<h2>This is a test</h2>
+
+<h4>List of our Users:</h4>
+
+<% @users.each do |b| %>
+<div><%= b.name %></div>
+<div><%= b.age %></div>
+<% end %>
+
+<hr>
+<h3>Create a new User</h3>
+
+<form method='POST' action='/new_user'>
+	<input type="text" name="name">
+	<input type="number" name="age">
+	<input type="submit" name="submit">
+</form>
+<hr>
+<h4>List of our Posts:</h4>
+
+<% @posts.each do |b| %>
+<div><%= b.title %></div>
+<div><%= b.number %></div>
+<% end %>
+
+<hr>
+<h3>Create a new Post</h3>
+
+<form method='POST' action='/new_post'>
+	<input type="text" name="title">
+	<input type="number" name="number">
+	<input type="submit" name="submit">
+</form>
