@@ -1,1 +1,21 @@
 <h2>My Database App</h2>
+
+<h4>List of our Blogs:</h4>
+
+<% @blogs.each do |b| %>
+<div><%= b.title %></div>
+<div><%= b.content %></div>
+<div><%= b.category%></div>
+<% end %>
+
+<hr>
+<h3>Create a new Blog</h3>
+
+<form method='POST' action='/new_blog'>
+	<input type="text" name="title">
+	<input type="text" name="content">
+	<input type="text" name="category">
+	<input type="submit" name="submit">
+
+
+</form>
