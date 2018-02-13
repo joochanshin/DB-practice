@@ -1,0 +1,32 @@
+<!-- Search form  here-->
+
+
+<h3 style='color: red'>Users:</h3>
+<h3>Different User Locations:</h3>
+<% @users.uniq{|x| x.location}.each do |u| %>
+<div><%= u.location %></div>
+<% end %>
+<hr>
+
+<h3>Filter Users by Location:</h3>
+<form method='get' action='/location'>
+	<input type="text" name="location" placeholder='Search Location'>
+	<input type="submit" name="submit">
+</form>
+
+<hr>
+<h3>All Users:</h3>
+<% @users.each do |u| %>
+
+<div><%= u.name %></div>
+<div><%= u.location %></div>
+<div><%= u.age %></div>
+<hr>
+<% end %>
+
+<form method='POST' action='/new_user'>
+	<input type="text" name="name">
+	<input type="text" name="location">
+	<input type="number" name="age">
+	<input type="submit" name="submit">
+</form>
